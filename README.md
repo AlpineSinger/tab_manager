@@ -69,4 +69,4 @@ for a while; the two work together.
 - `sidepanel.html/.css/.js`: the panel.
 
 ## License
-GPL-3.0, see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE).
