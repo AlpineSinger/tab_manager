@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tab Groups</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <header>
+      <input id="search" type="search" placeholder="Search tabs…" autocomplete="off" />
+      <div class="bar">
+        <span id="stats" class="muted"></span>
+        <span class="actions">
+          <button id="fold-all" title="Fold every group in the tab strip except the one you're on">Fold all</button>
+          <button id="sleep-all" title="Put every tab except the active one to sleep (frees memory, keeps the tab)">💤 Sleep all</button>
+          <button id="toggle-settings" title="Settings and grouping rules">⚙</button>
+        </span>
+      </div>
+      <div id="status" hidden></div>
+    </header>
+
+    <section id="settings" hidden>
+      <label class="check"><input id="auto-group" type="checkbox" /> Auto-group new tabs by rules</label>
+      <label class="check"
+        ><input id="focus-mode" type="checkbox" /> Fold all groups in the tab strip except the active tab's</label
+      >
+      <h3>Rules</h3>
+      <p class="muted">A tab joins the first rule whose text appears in its address (host + path). Separate several with commas.</p>
+      <div id="rules"></div>
+      <div class="row">
+        <button id="add-rule">+ Add rule</button>
+        <button id="group-now" title="Apply the rules to all tabs in this window">Group open tabs now</button>
+      </div>
+    </section>
+
+    <main id="list"></main>
+    <section id="parked-section">
+      <h3>Parked</h3>
+      <div id="parked"></div>
+    </section>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>
